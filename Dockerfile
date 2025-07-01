@@ -7,7 +7,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y git
 
 # Clone the repository
-RUN git clone https://github.com/YourUsername/YourRepoName.git .
+RUN git clone https://github.com/snowless1/unmask.git .
 
 # Copy the local config.json file to the container
 
@@ -15,7 +15,7 @@ RUN git clone https://github.com/YourUsername/YourRepoName.git .
 RUN pip install --no-cache-dir -r requirements.txt
 
 
-EXPOSE 8888
+EXPOSE 7860
 
 # Run run.py when the container launches
 CMD ["uvicorn", "run:main_app", "--host", "0.0.0.0", "--port", "8888", "--workers", "4"]
